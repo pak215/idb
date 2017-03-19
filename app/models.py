@@ -5,9 +5,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 
-base = declarative_base()
+Base = declarative_base()
 
-class Restaurants(base):
+class Restaurants(Base):
     __tablename__ = 'restaurants'
 
     # columns
@@ -33,12 +33,12 @@ class Restaurants(base):
     #url to images? image id's on a folder perhaps, tbd
     #images = Column(String(250), nullable=False)
 
-class Locations(base):
+class Locations(Base):
     __tablename__ = 'locations'
 
     # columns
     # a location object (row) on this table, will be a zipcode
-    zip = Column(Integer, primary_key=True)
+    zipcode = Column(Integer, primary_key=True)
     # overall average cost for that area's restaurants
     average_price  = Column(Integer, nullable=False)
     # most common food type found in area
@@ -55,7 +55,7 @@ class Locations(base):
 
     # why don't we have an average restaurant rating per zip??
 
-class Food_types(base):
+class Food_types(Base):
     __tablename__ = 'food_types'
 
     food_type = Column(String(250), primary_key=True)
@@ -66,11 +66,11 @@ class Food_types(base):
     # connects to Restaurants
     restaurant = relationship("Restaurants")
 
-    best_location = Column(Integer, ForeignKey('locations.zip'))
+    best_location = Column(Integer, ForeignKey('locations.zipcode'))
     # connects to Locations
     location = relationship("Locations")
 
-class Reviews(base):
+class Reviews(Base):
     __tablename__ = 'reviews'
 
     # Unless we have both a name and a time of publication (to the minute) 
@@ -84,7 +84,7 @@ class Reviews(base):
     # connects to Restaurants
     restaurant = relationship("Restaurants")
 
-    zip = Column(Integer, nullable = False)
+    zipcode = Column(Integer, nullable = False)
     # connects to Locations
     location = relationship("Locations")
 
@@ -94,4 +94,4 @@ db_name = 'alchemy_test_1'
 engine = create_engine(absolute_path + db_name)
 
 # Create all tables in the engine. Equivalent to Create Table in sql
-base.metadata.create_all(engine)
+Base.metadata.create_all(engine)
