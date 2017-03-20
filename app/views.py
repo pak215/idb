@@ -4,7 +4,7 @@ from flask import render_template
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html", restaurants = [{"name" : "test1"}, {"name" : "test2"}, {"name" : "test3"}])
+    return render_template("index.html", restaurants = [{"name" : "Gato", "img": "gato.jpg"}, {"name" : "Stack Burgerz", "img": "stack.jpg"}, {"name" : "Little Italy", "img": "italy.jpg"}])
 
 
 @app.route('/Restaurants')
