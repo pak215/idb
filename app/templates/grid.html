@@ -1,9 +1,16 @@
 {% extends "layout.html" %}
 {% block grid %}
-<div id = "container" class = "container">
+<div class = "container" style = "margin:auto;border: 1px solid #000000;">
+	<div class="row">
 	{% for restaurant in restaurants %}
-	<div class = "col-sm-3" style = "">
-		Restaurant Name {% restaurant["name"] %}
-	</div>
+
+	
+		<div class = "col-sm-4" style = "height: 150px; border: 1px solid #000000;">
+			Restaurant Name: {{ restaurant["name"] }}
+		</div>
+
 	{% endfor %}
+	</div>
 </div>
+
+{% endblock %}
