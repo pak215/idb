@@ -1,7 +1,7 @@
 # idb
 Swe Project 3
 
-# To Run The App Localy
+# To Run The App Locally
 Execute the following commands (you must be in the top-level of this repo):
 - ". ./gen_venv.sh" (this creates a virtualenv with the necessary requirements)
 - "python run.py" (this runs the application)
