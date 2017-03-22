@@ -34,6 +34,40 @@ spoof_db =[
     "rating": "5",\
     "id" : "3"
     }]
+
+Location_db=[
+    {"zipcode": "78701",
+    "average_price": "$$",
+    "popular_food_type": "Italian",
+    "highest_rated_restaurant": "Little Italy",
+    "Lowest_rated_restaurant": "Little Italia"
+    },
+    {"zipcode": "78702", 
+    "average_price": "$$$",
+    "popular_food_type": "Mediterranean",
+    "highest_rated_restaurant": "Gato",
+    "Lowest_rated_restaurant": "Kitty"
+    },
+    {"zipcode": "78703", 
+    "average_price": "$",
+    "popular_food_type": "American",
+    "highest_rated_restaurant": "Stack Burgers",
+    "Lowest_rated_restaurant": "Piled Sandwiches"
+    },
+    {"zipcode": "78704", 
+    "average_price": "$$",
+    "popular_food_type": "Indian",
+    "highest_rated_restaurant": "Biryani",
+    "Lowest_rated_restaurant": "Mcdonalds"
+    },
+    {"zipcode": "78705", 
+    "average_price": "$",
+    "popular_food_type": "Chinese",
+    "highest_rated_restaurant": "Ho Chinese BBQ",
+    "Lowest_rated_restaurant": "Panda Express"
+    }]
+
+
 views = Blueprint('views', __name__)
 
 @views.route('/')
@@ -84,6 +118,7 @@ def Reviews():
 @views.route('/About')
 def About():
     return render_template("about.html")
+
 # Model Elements Views
 
 @views.route('/Restaurants/<pk>')
