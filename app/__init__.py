@@ -3,7 +3,6 @@
 
 import logging
 from flask import current_app, Flask, redirect, url_for
-from .views import views
 
 
 def create_app(config, debug=False, testing=False, config_overrides=None):
@@ -20,9 +19,9 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
     if not app.testing:
         logging.basicConfig(level=logging.INFO)
 
-    # Register the Bookshelf CRUD blueprint.
-    #from .views import views
-    #app.register_blueprint(views, url_prefix='/appetite')
+    # Register the Bookshelf VIEWS blueprint.
+    from . views import views
+    app.register_blueprint(views, url_prefix='/appetite')
 
     # Add a default root route.
     @app.route("/")
