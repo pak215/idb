@@ -13,9 +13,9 @@ def Restaurants():
     return render_template(
         "restaurants.html",\
         model_elements = [
-            {"name" : "Gato", "img": "gato.jpg"},\
-            {"name" : "Stack Burgerz", "img": "stack.jpg"},\
-            {"name" : "Little Italy", "img": "italy.jpg"}
+            {"name" : "Gato", "img": "gato.jpg", "id":2},\
+            {"name" : "Stack Burgerz", "img": "stack.jpg", "id":3},\
+            {"name" : "Little Italy", "img": "italy.jpg", "id":1}
         ])
 
 

@@ -83,13 +83,13 @@
 		<div class="row">
 		{% for element in model_elements %}
 
-	
+		<a href = "/Restaurants/{{ element['id'] }}">
 		<div class = "col-sm-4" style = "height: 150px; border: 1px solid
             #000000;background-image:url('{{ url_for('static', filename='img/' +
             element['img']) }}'); text-align: center;">
 			<h1>{{ element["name"] }}</h1>
 		</div>
-
+		</a>
 		{% endfor %}
 		</div>
 	</div>

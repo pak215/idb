@@ -21,7 +21,7 @@ def create_app(config, debug=False, testing=False, config_overrides=None):
 
     # Register the Bookshelf VIEWS blueprint.
     from . views import views
-    app.register_blueprint(views, url_prefix='/appetite')
+    app.register_blueprint(views, url_prefix='')
 
     # Add a default root route.
     @app.route("/")
