@@ -1,0 +1,85 @@
+{% block restaurant_instance %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+}
+
+header {background: black;color:white;}
+footer {background: #aaa;color:white;}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+<header>
+  <h1>{{ instance["name"] }}, doesn't work </h1>
+</header>
+
+<nav class="nav">
+<ul>
+  <li><a href="#">More {{instance["food type"] }} restaurants</a></li>
+  <li><a href="#">Moree Reviews</a></li>
+</ul>
+</nav>
+
+<article class="article">
+  <h1> Food Type </h1>
+  <p> {{ instance["food type"] }} </p>
+
+  <h1> Rating </h1>
+  <p> {{ instance["rating"] }} </p>
+
+  <h1> Price </h1>
+  <p> {{ instance["price"] }} </p>
+
+  <h1> Location </h1>
+  <p> {{ instance["location"] }} </p>
+
+  <h1> Hours </h1>
+  <p> {{ instance["hours"] }} </p>
+
+  <h1> Last Review </h1>
+  <p> {{ instance["last review"] }} </p>
+
+</article>
+
+<footer>SWE Phase 1</footer>
+</div>
+
+</body>
+</html>
+
+{% endblock %}
