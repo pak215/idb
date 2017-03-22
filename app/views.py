@@ -7,7 +7,7 @@ spoof_db =[
     "zip" : "78701", \
     "price" : "$$", \
     "hours": "11:00am to 11:00pm", \
-    "food type": "Italian Food", \
+    "food_type": "Italian Food", \
     "rating": "3.4",\
     "img": "italy.jpg",\
     "id" : "1"
@@ -19,7 +19,7 @@ spoof_db =[
     "zip" : "78702", \
     "price" : "$$$", \
     "hours": "11:00am to 9:00pm", \
-    "food type": "Mediterranean Food", \
+    "food_type": "Mediterranean Food", \
     "rating": "4",\
     "id" : "2"
     }, 
@@ -30,7 +30,7 @@ spoof_db =[
     "zip" : "78703", \
     "price" : "$", \
     "hours": "11:00am to 11:00am", \
-    "food type": "American Food", \
+    "food_type": "American Food", \
     "rating": "5",\
     "id" : "3"
     },
@@ -41,7 +41,7 @@ spoof_db =[
     "zip" : "78704", \
     "price" : "$$", \
     "hours": "11:00am to 10:00am", \
-    "food type": "Indian", \
+    "food_type": "Indian", \
     "rating": "5",\
     "id" : "4"
     },
@@ -52,68 +52,68 @@ spoof_db =[
     "zip" : "78705", \
     "price" : "$$", \
     "hours": "11:00am to 9:30am", \
-    "food type": "Chinese", \
+    "food_type": "Chinese", \
     "rating": "5",\
     "id" : "5"
     }]
 
 Location_db=[
-    {"zipcode": "78701",
+    {"zip": "78701",
     "average_price": "$$",
     "popular_food_type": "Italian",
     "highest_rated_restaurant": "Little Italy",
-    "Lowest_rated_restaurant": "Little Italia"
+    "lowest_rated_restaurant": "Little Italia"
     },
-    {"zipcode": "78702", 
+    {"zip": "78702", 
     "average_price": "$$$",
     "popular_food_type": "Mediterranean",
     "highest_rated_restaurant": "Gato",
-    "Lowest_rated_restaurant": "Kitty"
+    "lowest_rated_restaurant": "Kitty"
     },
-    {"zipcode": "78703", 
+    {"zip": "78703", 
     "average_price": "$",
     "popular_food_type": "American",
     "highest_rated_restaurant": "Stack Burgers",
-    "Lowest_rated_restaurant": "Piled Sandwiches"
+    "lowest_rated_restaurant": "Piled Sandwiches"
     },
-    {"zipcode": "78704", 
+    {"zip": "78704", 
     "average_price": "$$",
     "popular_food_type": "Indian",
     "highest_rated_restaurant": "Biryani",
-    "Lowest_rated_restaurant": "Mcdonalds"
+    "lowest_rated_restaurant": "Mcdonalds"
     },
-    {"zipcode": "78705", 
+    {"zip": "78705", 
     "average_price": "$",
     "popular_food_type": "Chinese",
     "highest_rated_restaurant": "Ho ho Chinese BBQ",
-    "Lowest_rated_restaurant": "Panda Express"
+    "lowest_rated_restaurant": "Panda Express"
     }]
 food_type_db=[
-    {"food type": "Chinese",
+    {"food_type": "Chinese",
      "average price": "$",
      "average rating": "3",
      "highest_rated_restaurant": "Ho Ho chinese BBQ",
      "best_location": "78705"
     },
-    {"food type": "Mediterranean",
+    {"food_type": "Mediterranean",
      "average price": "$$$",
      "average rating": "4.2",
      "highest_rated_restaurant": "Gato",
      "best_location": "78702"
      },
-    {"food type": "Italian",
+    {"food_type": "Italian",
      "average price": "$$$",
      "average rating": "4.8",
      "highest_rated_restaurant": "Little Italy",
      "best_location": "78701"
      },
-    {"food type": "Indian",
+    {"food_type": "Indian",
      "average price": "$$",
      "average rating": "3.8",
      "highest_rated_restaurant": "Biryani",
      "best_location": "78704"
      },
-    {"food type": "American",
+    {"food_type": "American",
      "average price": "$",
      "average rating": "3.1",
      "highest_rated_restaurant": "Stack Burgers",
@@ -183,7 +183,7 @@ def Restaurants():
 @views.route('/Locations')
 def Locations():
     return render_template(
-        "locations.html", model_elements = location_db)
+        "locations.html", model_elements = Location_db)
 
 @views.route('/Food_Types')
 def Food_types():

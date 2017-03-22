@@ -9,7 +9,7 @@
 
 <nav class="nav">
 <ul>
-  <li><a href="#">More {{instance["food type"] }} restaurants</a></li>
+  <li><a href="#">More {{instance["food_type"] }} restaurants</a></li>
   <li><a href="#">More Reviews</a></li>
 </ul>
 </nav>
@@ -17,7 +17,7 @@
 <article class="article">
   <p> <img src="{{ url_for('static', filename='img/' + instance['img'])}}" align="right"> </p>
   <h2> Food Type </h2>
-  <p> {{ instance["food type"] }} </p>
+  <p> {{ instance["food_type"] }} </p>
 
   <h2> Rating </h2>
   <p> {{ instance["rating"] }} </p>

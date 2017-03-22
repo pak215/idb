@@ -4,12 +4,12 @@
 <body>
 <div class="flex-container">
 <header>
-  <h1 class = "detailView">{{ instance["name"] }}</h1>
+  <h1 class = "detailView">{{ instance["zip"] }}</h1>
 </header>
 
 <nav class="nav">
 <ul>
-  <li><a href="#">List restaurants in {{ instance["zip"] }} </a></li>
+  <li><a href="#">List restaurants in {{ instance["zip"] }}</a></li>
   <li><a href="#">List Food Types in {{ instance["zip"] }}</a></li>
 </ul>
 </nav>
@@ -20,10 +20,10 @@
   <p> {{ instance["zip"] }} </p>
 
   <h2> Average Price </h2>
-  <p> {{ instance["average price"] }} </p>
+  <p> {{ instance["average_price"] }} </p>
 
   <h2> Average Rating </h2>
-  <p> {{ instance["average rating"] }} </p>
+  <p> {{ instance["average_rating"] }} </p>
 
   <h2> Highest Rated Restaurant </h2>
   <p> "{{ instance["highest_rated_restaurant"] }}" </p>
