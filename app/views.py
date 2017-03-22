@@ -72,27 +72,31 @@ def Restaurants():
 @views.route('/Locations')
 def Locations():
     return render_template(
-        "grid.html",\
+        "locations.html",\
         model_elements = [
-            {"name" : "78701", "img": "temp_image.png"},\
-            {"name" : "78702", "img": "temp_image.png"},\
-            {"name" : "78703", "img": "temp_image.png"}
+            {"zip" : "78701", "img": "temp_image.png"},\
+            {"zip" : "78702", "img": "temp_image.png"},\
+            {"zip" : "78703", "img": "temp_image.png"},\
+            {"zip" : "78704", "img": "temp_image.png"},\
+            {"zip" : "78705", "img": "temp_image.png"}
         ])
 
 @views.route('/Food_Types')
 def Food_types():
     return render_template(
-        "grid.html",\
+        "foodtype.html",\
         model_elements = [
-            {"name" : "Italian", "img": "temp_image.png"},\
-            {"name" : "American", "img": "temp_image.png"},\
-            {"name" : "Spanish", "img": "temp_image.png"}
+            {"type" : "Italian", "img": "temp_image.png"},\
+            {"type" : "American", "img": "temp_image.png"},\
+            {"type" : "Spanish", "img": "temp_image.png"},\
+            {"type" : "Mexican", "img": "temp_image.png"},\
+            {"type" : "Greek", "img": "temp_image.png"}
         ])
 
 @views.route('/Reviews')
 def Reviews():
     return render_template(
-        "grid.html",\
+        "reviews.html",\
         model_elements = [
             {"name" : "Gato - John", "img": "temp_image.png"},\
             {"name" : "Stack Burgerz - Roney", "img": "temp_image.png"},\
@@ -103,9 +107,25 @@ def Reviews():
 def About():
     return render_template("about.html")
 # Model Elements Views
+
 @views.route('/Restaurants/<pk>')
 def restaurant(pk):
     global spoof_db
     for d in spoof_db:
-	if d["id"] == pk:
-	    return render_template("restaurant_instance.html",instance=d)
+        if d["id"] == pk:
+            return render_template("restaurant_instance.html",instance=d)
+
+@views.route('/Restaurants/Type/<pk>')
+def restaurantType(pk):
+    global spoof_db
+    return render_template("restaurants.html", model_elements = spoof_db)
+
+@views.route('/Restaurants/Location/<pk>')
+def restaurantLocation(pk):
+    global spoof_db
+    return render_template("restaurants.html", model_elements = spoof_db)
+
+@views.route('/Restaurants/Review/<pk>')
+def restaurantReview(pk):
+    global spoof_db
+    return render_template("restaurants.html", model_elements = spoof_db)
