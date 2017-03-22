@@ -45,7 +45,7 @@ footer {background: #aaa;color:white;}
 
 <div class="flex-container">
 <header>
-  <h1>{{ instance["name"] }}, doesn't work </h1>
+  <h1>{{ instance["name"] }}</h1>
 </header>
 
 <nav class="nav">
@@ -66,7 +66,7 @@ footer {background: #aaa;color:white;}
   <p> {{ instance["price"] }} </p>
 
   <h1> Location </h1>
-  <p> {{ instance["location"] }} </p>
+  <p> {{ instance["location"] }}, {{ instance["zip"] }} </p>
 
   <h1> Hours </h1>
   <p> {{ instance["hours"] }} </p>

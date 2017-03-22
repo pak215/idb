@@ -58,13 +58,13 @@ def Reviews():
 def restaurant():
     return render_template(
 	"restaurant_instance.html", \
-        instance = [
+        instance = 
             {"name" : "Little Italy", "img": "italy.jpeg", \
 	    "last review" : "Excellent Garlic Bread", \
-	    "location" : "123 fake street", \
+	    "location" : "1215 S Congress", \
 	    "zip" : "78701", \
 	    "price" : "$$", \
 	    "hours": "11:00am to 11:00pm", \
-	    "food Type": "Italian Food", \
+	    "food type": "Italian Food", \
 	    "rating": "4.5"}
-	])
+	)
