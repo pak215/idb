@@ -4,7 +4,7 @@
 <body>
 <div class="flex-container">
 <header>
-  <h1 class = "detailView">{{ instance["name"] }}</h1>
+  <h1 class = "detailView">{{ instance["username"] }} - review of {{ instace["restaurant"] }}</h1>
 </header>
 
 <nav class="nav">
@@ -15,24 +15,20 @@
 </nav>
 
 <article class="article">
-  <p> <img src="{{ url_for('static', filename='img/' + instance['img'])}}" align="right"> </p>
-  <h2> Food Type </h2>
-  <p> {{ instance["food type"] }} </p>
+    <p> <img src="{{ url_for('static', filename='img/' + 'temp_image.png')}}" align="right"> </p>
+
+  <h2> Location </h2>
+  <p> {{ instance["zip"] }} </p>
 
   <h2> Rating </h2>
   <p> {{ instance["rating"] }} </p>
 
-  <h2> Price </h2>
-  <p> {{ instance["price"] }} </p>
+  <h2> Review </h2>
+  <p> {{ instance["review"] }} </p>
 
-  <h2> Location </h2>
-  <p> {{ instance["location"] }}, {{ instance["zip"] }} </p>
+    <h2> Date </h2>
+    <p> {{ instance["date"] }} </p>
 
-  <h2> Hours </h2>
-  <p> {{ instance["hours"] }} </p>
-
-  <h2> Last Review </h2>
-  <p> "{{ instance["last review"] }}" </p>
 </article>
 
 <footer>SWE Phase 1</footer>
