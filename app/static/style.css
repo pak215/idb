@@ -15,7 +15,10 @@ h2              { font-size: 1.2em; }
                   border: 1px solid #aacbe2; }
 .error          { background: #f0d6d6; padding: 0.5em; }
 
-input[type=text] {
+.containerFoodType { height: 100px; overflow-y: scroll; }
+
+
+input[type=text].mainsearch {
 	display:block;
     width: 300px;
     box-sizing: border-box;
@@ -34,4 +37,18 @@ input[type=text] {
 
 input[type=text]:focus {
     width: 70%;
+}
+
+
+[id^="togList"],                        /* HIDE CHECKBOX */
+[id^="togList"] ~ .list,                /* HIDE LIST */
+[id^="togList"] + label  span + span,   /* HIDE "Collapse" */
+[id^="togList"]:checked + label span{   /* HIDE "Expand" (IF CHECKED) */
+  display:none;
+}
+[id^="togList"]:checked + label span + span{
+  display:inline-block;                 /* SHOW "Collapse" (IF CHECKED) */
+}
+[id^="togList"]:checked ~ .list{
+  display:block;                        /* SHOW LIST (IF CHECKED) */
 }
