@@ -183,6 +183,7 @@ def Restaurants():
 
 @views.route('/Locations')
 def Locations():
+    global location_db
     return render_template(
         "locations.html", model_elements = location_db)
 
@@ -232,12 +233,12 @@ def restaurantType(pk):
 
 # LOCATIONS
 
-@views.route('/Restaurants/Location/<pk>')
-def restaurantLocation(pk):
+@views.route('/Locations/<pk>')
+def location(pk):
     global location_db
     for d in location_db:
         if d["zip"] == pk:
-            return render_template("restaurant_instance.html",instance=d)
+            return render_template("location_instance.html",instance=d)
 
 # REVIEWS
 
