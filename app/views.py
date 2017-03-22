@@ -2,7 +2,7 @@ from flask import render_template, Blueprint, render_template
 spoof_db =[
     {"name" : "Little Italy",\
      "img": "italy.jpeg", \
-    "last review" : "Excellent Garlic Bread. -Tom", \
+    "last_review" : "Excellent Garlic Bread. -Tom", \
     "location" : "1215 S Congress", \
     "zip" : "78701", \
     "price" : "$$", \
@@ -14,7 +14,7 @@ spoof_db =[
     },
     {"name" : "Gato",\
      "img": "gato.jpg", \
-    "last review" : "They actually don't serve cat 1/10. -Tom", \
+    "last_review" : "They actually don't serve cat 1/10. -Tom", \
     "location" : "5568 N Lamar Blvd", \
     "zip" : "78702", \
     "price" : "$$$", \
@@ -25,7 +25,7 @@ spoof_db =[
     }, 
     {"name" : "Stack Burgers",\
     "img": "stack.jpg", \
-    "last review" : "I tried their waffles, not impressed. -Jen", \
+    "last_review" : "I tried their waffles, not impressed. -Jen", \
     "location" : "1231 Wells Branch Pwy", \
     "zip" : "78703", \
     "price" : "$", \
@@ -36,7 +36,7 @@ spoof_db =[
     },
     {"name" : "Biryani Pot",\
     "img": "biryani.jpg", \
-    "last review" : "Try their Chicken Dum Biryani! It's absolutely heavenly. -Jeff", \
+    "last_review" : "Try their Chicken Dum Biryani! It's absolutely heavenly. -Jeff", \
     "location" : "12407 N Mopac Expy", \
     "zip" : "78704", \
     "price" : "$$", \
@@ -47,7 +47,7 @@ spoof_db =[
     },
     {"name" : "Ho Ho Chinese BBQ",\
     "img": "hoho.jpg", \
-    "last review" : "I loved their bbq pork fried rice. -Nathan", \
+    "last_review" : "I loved their bbq pork fried rice. -Nathan", \
     "location" : "12407 N Mopac Expy", \
     "zip" : "78705", \
     "price" : "$$", \
