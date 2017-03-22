@@ -92,31 +92,31 @@ location_db=[
 food_type_db=[
     {"food_type": "Chinese",
      "average_price": "$",
-     "average rating": "3",
+     "average_rating": "3",
      "highest_rated_restaurant": "Ho Ho chinese BBQ",
      "best_location": "78705"
     },
     {"food_type": "Mediterranean",
      "average_price": "$$$",
-     "average rating": "4.2",
+     "average_rating": "4.2",
      "highest_rated_restaurant": "Gato",
      "best_location": "78702"
      },
     {"food_type": "Italian",
      "average_price": "$$$",
-     "average rating": "4.8",
+     "average_rating": "4.8",
      "highest_rated_restaurant": "Little Italy",
      "best_location": "78701"
      },
     {"food_type": "Indian",
      "average_price": "$$",
-     "average rating": "3.8",
+     "average_rating": "3.8",
      "highest_rated_restaurant": "Biryani",
      "best_location": "78704"
      },
     {"food_type": "American",
      "average_price": "$",
-     "average rating": "3.1",
+     "average_rating": "3.1",
      "highest_rated_restaurant": "Stack Burgers",
      "best_location": "78703"
      },]
