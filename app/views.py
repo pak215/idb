@@ -1,7 +1,7 @@
 from flask import render_template, Blueprint, render_template
-restaurant_db =[
+restaurant_db=[
     {"name" : "Little Italy",\
-     "img": "italy.jpeg", \
+    "img": "italy.jpeg", \
     "last_review" : "Excellent Garlic Bread. -Tom", \
     "location" : "1215 S Congress", \
     "zip" : "78701", \
@@ -13,7 +13,7 @@ restaurant_db =[
     "id" : "1"
     },
     {"name" : "Gato",\
-     "img": "gato.jpg", \
+    "img": "gato.jpg", \
     "last_review" : "They actually don't serve cat 1/10. -Tom", \
     "location" : "5568 N Lamar Blvd", \
     "zip" : "78702", \
@@ -22,7 +22,7 @@ restaurant_db =[
     "food_type": "Mediterranean Food", \
     "rating": "4",\
     "id" : "2"
-    }, 
+    },
     {"name" : "Stack Burgers",\
     "img": "stack.jpg", \
     "last_review" : "I tried their waffles, not impressed. -Jen", \
@@ -88,38 +88,39 @@ location_db=[
     "highest_rated_restaurant": "Ho ho Chinese BBQ",
     "lowest_rated_restaurant": "Panda Express"
     }]
+
 food_type_db=[
     {"food_type": "Chinese",
-     "average price": "$",
+     "average_price": "$",
      "average rating": "3",
      "highest_rated_restaurant": "Ho Ho chinese BBQ",
      "best_location": "78705"
     },
     {"food_type": "Mediterranean",
-     "average price": "$$$",
+     "average_price": "$$$",
      "average rating": "4.2",
      "highest_rated_restaurant": "Gato",
      "best_location": "78702"
      },
     {"food_type": "Italian",
-     "average price": "$$$",
+     "average_price": "$$$",
      "average rating": "4.8",
      "highest_rated_restaurant": "Little Italy",
      "best_location": "78701"
      },
     {"food_type": "Indian",
-     "average price": "$$",
+     "average_price": "$$",
      "average rating": "3.8",
      "highest_rated_restaurant": "Biryani",
      "best_location": "78704"
      },
     {"food_type": "American",
-     "average price": "$",
+     "average_price": "$",
      "average rating": "3.1",
      "highest_rated_restaurant": "Stack Burgers",
      "best_location": "78703"
-     },
-]
+     },]
+
 review_db =[
     {"review id": "1",
      "date": "1/10/2014",
