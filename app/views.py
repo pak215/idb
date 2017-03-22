@@ -92,12 +92,12 @@ Location_db=[
 
 views = Blueprint('views', __name__)
 
+# Splash Screen
 @views.route('/')
 @views.route('/index')
 def index():
     return render_template("index.html")
 # Model Views
-
 @views.route('/Restaurants')
 def Restaurants():
     global spoof_db
@@ -106,14 +106,7 @@ def Restaurants():
 @views.route('/Locations')
 def Locations():
     return render_template(
-        "locations.html",\
-        model_elements = [
-            {"zip" : "78701", "img": "temp_image.png"},\
-            {"zip" : "78702", "img": "temp_image.png"},\
-            {"zip" : "78703", "img": "temp_image.png"},\
-            {"zip" : "78704", "img": "temp_image.png"},\
-            {"zip" : "78705", "img": "temp_image.png"}
-        ])
+        "locations.html", model_elements = location_db)
 
 @views.route('/Food_Types')
 def Food_types():
@@ -143,6 +136,8 @@ def About():
 
 # Model Elements Views
 
+# RESTAURANTS
+
 @views.route('/Restaurants/<pk>')
 def restaurant(pk):
     global spoof_db
@@ -150,17 +145,23 @@ def restaurant(pk):
         if d["id"] == pk:
             return render_template("restaurant_instance.html",instance=d)
 
+# FOOD TYPES
+
 @views.route('/Restaurants/Type/<pk>')
 def restaurantType(pk):
     global spoof_db
-    return render_template("restaurants.html", model_elements = spoof_db)
+    return render_template("food_type_instance.html", model_elements = spoof_db)
+
+# LOCATIONS
 
 @views.route('/Restaurants/Location/<pk>')
 def restaurantLocation(pk):
-    global spoof_db
-    return render_template("restaurants.html", model_elements = spoof_db)
+    global location_db
+    return render_template("location_instance.html", model_elements = location_db)
+
+# REVIEWS
 
 @views.route('/Restaurants/Review/<pk>')
 def restaurantReview(pk):
-    global spoof_db
-    return render_template("restaurants.html", model_elements = spoof_db)
+    global review_db
+    return render_template("review_instance.html", model_elements = review_db)
