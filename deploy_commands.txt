@@ -1,0 +1,12 @@
+** Deployment Notes **
+
+First, you must have the Google Cloud SDK installed. See http://cloud.google.com/sdk/docs/.
+
+Next, do "gcloud config list" and make sure the project ID listed in the output is the project
+ID that you want to deploy to. If not, set it with "gcloud config set project <your project ID>".
+
+Then, all you have to do is execute "gcloud app deploy" and wait for it to finish.
+Don't deploy anything with out making sure it works locally (see the README).
+Also, you should probably let everyone know somehow that you are deploying a new version.
+
+I'm not sure if there will be an authentication issue. If there is, contact me (Audric).
