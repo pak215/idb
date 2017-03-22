@@ -43,7 +43,7 @@ spoof_db =[
     "hours": "11:00am to 10:00am", \
     "food type": "Indian", \
     "rating": "5",\
-    "id" : "7"
+    "id" : "4"
     },
     {"name" : "Ho Ho Chinese BBQ",\
     "img": "hoho.jpg", \
@@ -54,7 +54,7 @@ spoof_db =[
     "hours": "11:00am to 9:30am", \
     "food type": "Chinese", \
     "rating": "5",\
-    "id" : "8"
+    "id" : "5"
     }]
 
 Location_db=[
@@ -85,10 +85,72 @@ Location_db=[
     {"zipcode": "78705", 
     "average_price": "$",
     "popular_food_type": "Chinese",
-    "highest_rated_restaurant": "Ho Chinese BBQ",
+    "highest_rated_restaurant": "Ho ho Chinese BBQ",
     "Lowest_rated_restaurant": "Panda Express"
     }]
-
+food_type_db=[
+    {"food type": "Chinese",
+     "average price": "$",
+     "average rating": "3",
+     "highest_rated_restaurant": "Ho Ho chinese BBQ",
+     "best_location": "78705"
+    },
+    {"food type": "Mediterranean",
+     "average price": "$$$",
+     "average rating": "4.2",
+     "highest_rated_restaurant": "Gato",
+     "best_location": "78702"
+     },
+    {"food type": "Italian",
+     "average price": "$$$",
+     "average rating": "4.8",
+     "highest_rated_restaurant": "Little Italy",
+     "best_location": "78701"
+     },
+    {"food type": "Indian",
+     "average price": "$$",
+     "average rating": "3.8",
+     "highest_rated_restaurant": "Biryani",
+     "best_location": "78704"
+     },
+    {"food type": "American",
+     "average price": "$",
+     "average rating": "3.1",
+     "highest_rated_restaurant": "Stack Burgers",
+     "best_location": "78703"
+     },
+]
+review_db =[
+    {"review id": "1",
+     "date": "1/10/2014",
+     "rating": "4",
+     "username": "Federico",
+     "restaurant id": "1"
+    },
+    {"review id": "2",
+     "date": "2/11/2015",
+     "rating": "3",
+     "username": "Chuck",
+     "restaurant id": "2"
+     },
+    {"review id": "3",
+     "date": "1/4/2017",
+     "rating": "5",
+     "username": "Gabriel",
+     "restaurant id": "3"
+     },
+    {"review id": "4",
+     "date": "1/10/2017",
+     "rating": "4",
+     "username": "Dominique",
+     "restaurant id": "4"
+     },
+    {"review id": "5",
+     "date": "1/11/2004",
+     "rating": "4",
+     "username": "Maggie",
+     "restaurant id": "5"
+     }]
 
 views = Blueprint('views', __name__)
 
@@ -157,7 +219,7 @@ def restaurantType(pk):
 @views.route('/Restaurants/Location/<pk>')
 def restaurantLocation(pk):
     global location_db
-    for d in spoof_db:
+    for d in location_db:
         if d["zip"] == pk:
             return render_template("restaurant_instance.html",instance=d)
 
@@ -166,4 +228,7 @@ def restaurantLocation(pk):
 @views.route('/Restaurants/Review/<pk>')
 def restaurantReview(pk):
     global review_db
-    return render_template("review_instance.html", model_elements = review_db)
+    for d in location_db:
+        if d["review id"] == pk:
+            return render_template("restaurant_instance.html",instance=d)
+
