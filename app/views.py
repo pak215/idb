@@ -60,11 +60,13 @@ def restaurant():
 	"restaurant_instance.html", \
         instance = 
             {"name" : "Little Italy", "img": "italy.jpeg", \
-	    "last review" : "Excellent Garlic Bread", \
+	    "last review" : "Excellent Garlic Bread. -Tom", \
 	    "location" : "1215 S Congress", \
 	    "zip" : "78701", \
 	    "price" : "$$", \
 	    "hours": "11:00am to 11:00pm", \
 	    "food type": "Italian Food", \
-	    "rating": "4.5"}
+	    "rating": "4.5",\
+	    "img": "italy.jpg"
+	    }
 	)
