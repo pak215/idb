@@ -54,18 +54,19 @@ def Reviews():
 
 
 # Model Elements Views
-# the route will be dynamic in the future.
-@views.route('/Little_Italy')
-def restaurant():
-    return render_template(
-	"restaurant_instance.html", \
-        instance = 
+@views.route('/Restaurants/<pk>')
+def restaurant(pk):
+    # should only work with restaurant primary key = 1
+    spoof_db =[{}, 
             {"name" : "Little Italy", "img": "italy.jpeg", \
-	    "last review" : "Excellent Garlic Bread", \
+	    "last review" : "Excellent Garlic Bread. -Tom", \
 	    "location" : "1215 S Congress", \
 	    "zip" : "78701", \
 	    "price" : "$$", \
 	    "hours": "11:00am to 11:00pm", \
 	    "food type": "Italian Food", \
-	    "rating": "4.5"}
-	)
+	    "rating": "4.5",\
+	    "img": "italy.jpg"
+	    }]
+
+    return render_template("restaurant_instance.html",instance=spoof_db[1])
