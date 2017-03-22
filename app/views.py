@@ -77,6 +77,9 @@ def Reviews():
             {"name" : "Little Italy - Tom", "img": "temp_image.png"}
         ])
 
+@views.route('/About')
+def About():
+    return render_template("about.html")
 # Model Elements Views
 @views.route('/Restaurants/<pk>')
 def restaurant(pk):
