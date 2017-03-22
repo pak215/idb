@@ -1,59 +1,59 @@
 from flask import render_template, Blueprint, render_template
 restaurant_db=[
-    {"name" : "Little Italy",\
-    "img": "italy.jpeg", \
-    "last_review" : "Excellent Garlic Bread. -Tom", \
-    "location" : "1215 S Congress", \
-    "zip" : "78701", \
-    "price" : "$$", \
-    "hours": "11:00am to 11:00pm", \
-    "food_type": "Italian Food", \
-    "rating": "3.4",\
-    "img": "italy.jpg",\
+    {"name" : "Little Italy",
+    "img": "italy.jpeg",
+    "last_review" : "Excellent Garlic Bread. -Tom",
+    "location" : "1215 S Congress",
+    "zip" : "78701",
+    "price" : "$$",
+    "hours": "11:00am to 11:00pm",
+    "food_type": "Italian Food",
+    "rating": "3.4",
+    "img": "italy.jpg",
     "id" : "1"
     },
-    {"name" : "Gato",\
-    "img": "gato.jpg", \
-    "last_review" : "They actually don't serve cat 1/10. -Tom", \
-    "location" : "5568 N Lamar Blvd", \
-    "zip" : "78702", \
-    "price" : "$$$", \
-    "hours": "11:00am to 9:00pm", \
-    "food_type": "Mediterranean Food", \
-    "rating": "4",\
+    {"name" : "Gato",
+    "img": "gato.jpg",
+    "last_review" : "They actually don't serve cat 1/10. -Tom",
+    "location" : "5568 N Lamar Blvd",
+    "zip" : "78702",
+    "price" : "$$$",
+    "hours": "11:00am to 9:00pm",
+    "food_type": "Mediterranean Food",
+    "rating": "4",
     "id" : "2"
     },
-    {"name" : "Stack Burgers",\
-    "img": "stack.jpg", \
-    "last_review" : "I tried their waffles, not impressed. -Jen", \
-    "location" : "1231 Wells Branch Pwy", \
-    "zip" : "78703", \
-    "price" : "$", \
-    "hours": "11:00am to 11:00am", \
-    "food_type": "American Food", \
-    "rating": "5",\
+    {"name" : "Stack Burgers",
+    "img": "stack.jpg",
+    "last_review" : "I tried their waffles, not impressed. -Jen",
+    "location" : "1231 Wells Branch Pwy",
+    "zip" : "78703",
+    "price" : "$",
+    "hours": "11:00am to 11:00am",
+    "food_type": "American Food",
+    "rating": "5",
     "id" : "3"
     },
-    {"name" : "Biryani Pot",\
-    "img": "biryani.jpg", \
-    "last_review" : "Try their Chicken Dum Biryani! It's absolutely heavenly. -Jeff", \
-    "location" : "12407 N Mopac Expy", \
-    "zip" : "78704", \
-    "price" : "$$", \
-    "hours": "11:00am to 10:00am", \
-    "food_type": "Indian", \
-    "rating": "5",\
+    {"name" : "Biryani Pot",
+    "img": "biryani.jpg",
+    "last_review" : "Try their Chicken Dum Biryani! It's absolutely heavenly. -Jeff",
+    "location" : "12407 N Mopac Expy",
+    "zip" : "78704",
+    "price" : "$$",
+    "hours": "11:00am to 10:00am",
+    "food_type": "Indian",
+    "rating": "5",
     "id" : "4"
     },
-    {"name" : "Ho Ho Chinese BBQ",\
-    "img": "hoho.jpg", \
-    "last_review" : "I loved their bbq pork fried rice. -Nathan", \
-    "location" : "12407 N Mopac Expy", \
-    "zip" : "78705", \
-    "price" : "$$", \
-    "hours": "11:00am to 9:30am", \
-    "food_type": "Chinese", \
-    "rating": "5",\
+    {"name" : "Ho Ho Chinese BBQ",
+    "img": "hoho.jpg",
+    "last_review" : "I loved their bbq pork fried rice. -Nathan",
+    "location" : "12407 N Mopac Expy",
+    "zip" : "78705",
+    "price" : "$$",
+    "hours": "11:00am to 9:30am",
+    "food_type": "Chinese",
+    "rating": "5",
     "id" : "5"
     }]
 
@@ -139,7 +139,7 @@ review_db =[
      "zip": "78702",
      "review": "Great Hummus",
      "restaurant_id": "2"
-     },
+    },
     {"review_id": "3",
      "date": "1/4/2017",
      "rating": "5",
@@ -148,7 +148,7 @@ review_db =[
      "zip": "78703",
      "review": "Didn't like their Waffles",
      "restaurant_id": "3"
-     },
+    },
     {"review_id": "4",
      "date": "1/10/2017",
      "rating": "4",
@@ -157,7 +157,7 @@ review_db =[
      "zip": "78704",
      "review": "Great Basmati rice",
      "restaurant_id": "4"
-     },
+    },
     {"review_id": "5",
      "date": "1/11/2004",
      "rating": "4",
@@ -191,10 +191,10 @@ def Food_types():
     return render_template(
         "foodtype.html",\
         model_elements = [
-            {"type" : "Italian", "img": "temp_image.png"},\
-            {"type" : "American", "img": "temp_image.png"},\
-            {"type" : "Spanish", "img": "temp_image.png"},\
-            {"type" : "Mexican", "img": "temp_image.png"},\
+            {"type" : "Italian", "img": "temp_image.png"},
+            {"type" : "American", "img": "temp_image.png"},
+            {"type" : "Spanish", "img": "temp_image.png"},
+            {"type" : "Mexican", "img": "temp_image.png"},
             {"type" : "Greek", "img": "temp_image.png"}
         ])
 
@@ -203,8 +203,8 @@ def Reviews():
     return render_template(
         "reviews.html",\
         model_elements = [
-            {"name" : "Gato - John", "img": "temp_image.png"},\
-            {"name" : "Stack Burgerz - Roney", "img": "temp_image.png"},\
+            {"name" : "Gato - John", "img": "temp_image.png"},
+            {"name" : "Stack Burgerz - Roney", "img": "temp_image.png"},
             {"name" : "Little Italy - Tom", "img": "temp_image.png"}
         ])
 
