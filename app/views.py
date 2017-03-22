@@ -157,7 +157,9 @@ def restaurantType(pk):
 @views.route('/Restaurants/Location/<pk>')
 def restaurantLocation(pk):
     global location_db
-    return render_template("location_instance.html", model_elements = location_db)
+    for d in spoof_db:
+        if d["zip"] == pk:
+            return render_template("restaurant_instance.html",instance=d)
 
 # REVIEWS
 
