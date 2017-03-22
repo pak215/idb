@@ -19,7 +19,7 @@ def Restaurants():
         ])
 
 
-@app.route('/Locations')
+@views.route('/Locations')
 def Locations():
     return render_template(
         "grid.html",\
@@ -30,7 +30,7 @@ def Locations():
         ])
 
 
-@app.route('/Food_Types')
+@views.route('/Food_Types')
 def Food_types():
     return render_template(
         "grid.html",\
@@ -41,7 +41,7 @@ def Food_types():
         ])
 
 
-@app.route('/Reviews')
+@views.route('/Reviews')
 def Reviews():
     return render_template(
         "grid.html",\
