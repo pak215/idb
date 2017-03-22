@@ -15,7 +15,7 @@ h2              { font-size: 1.2em; }
                   border: 1px solid #aacbe2; }
 .error          { background: #f0d6d6; padding: 0.5em; }
 
-.containerFoodType { border:2px solid #ccc; width:300px; height: 100px; overflow-y: scroll; }
+.containerFoodType { height: 100px; overflow-y: scroll; }
 
 
 input[type=text].mainsearch {
