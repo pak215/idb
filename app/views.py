@@ -129,7 +129,7 @@ review_db =[
      "restaurant": "Little Italy",
      "zip": "78701",
      "review": "Incredible Garlic Bread",
-     "restaurant id": "1"
+     "restaurant_id": "1"
     },
     {"review_id": "2",
      "date": "2/11/2015",
@@ -138,7 +138,7 @@ review_db =[
      "restaurant": "Gato",
      "zip": "78702",
      "review": "Great Hummus",
-     "restaurant id": "2"
+     "restaurant_id": "2"
      },
     {"review_id": "3",
      "date": "1/4/2017",
@@ -147,7 +147,7 @@ review_db =[
      "restaurant": "Stack Burgers",
      "zip": "78703",
      "review": "Didn't like their Waffles",
-     "restaurant id": "3"
+     "restaurant_id": "3"
      },
     {"review_id": "4",
      "date": "1/10/2017",
@@ -156,7 +156,7 @@ review_db =[
      "restaurant": "Biryani",
      "zip": "78704",
      "review": "Great Basmati rice",
-     "restaurant id": "4"
+     "restaurant_id": "4"
      },
     {"review_id": "5",
      "date": "1/11/2004",
@@ -165,7 +165,7 @@ review_db =[
      "restaurant": "Ho Ho chinese BBQ",
      "zip": "78705",
      "review": "I didn't like the General Tso Chicken",
-     "restaurant id": "5"
+     "restaurant_id": "5"
      }]
 
 views = Blueprint('views', __name__)
