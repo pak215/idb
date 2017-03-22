@@ -10,7 +10,7 @@ def index():
 @app.route('/Restaurants')
 def Restaurants():
     return render_template(
-        "grid.html",\
+        "restaurants.html",\
         model_elements = [
             {"name" : "Gato", "img": "gato.jpg"},\
             {"name" : "Stack Burgerz", "img": "stack.jpg"},\
