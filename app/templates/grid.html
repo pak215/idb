@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
-{% block grid %}
+{% block body %}
 <div class = "container" style = "margin:auto;border: 1px solid #000000;">
 	<div class="row">
-	{% for restaurant in restaurants %}
+	{% for element in model_elements %}
 
 	
-		<div class = "col-sm-4" style = "height: 150px; border: 1px solid #000000;background-image:url('{{ url_for('static', filename='img/' + restaurant['img']) }}'); text-align: center;">
-			<h1>{{ restaurant["name"] }}</h1>
+		<div class = "col-sm-4" style = "height: 150px; border: 1px solid
+            #000000;background-image:url('{{ url_for('static', filename='img/' +
+            element['img']) }}'); text-align: center;">
+			<h1>{{ element["name"] }}</h1>
 		</div>
 
 	{% endfor %}
