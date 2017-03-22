@@ -57,7 +57,26 @@ def Reviews():
 @views.route('/Restaurants/<pk>')
 def restaurant(pk):
     # should only work with restaurant primary key = 1
-    spoof_db =[{}, 
+    spoof_db =[{"name" : "Little Italy", "img": "italy.jpeg", \
+        "last review" : "Excellent Garlic Bread. -Tom", \
+        "location" : "1215 S Congress", \
+        "zip" : "78701", \
+        "price" : "$$", \
+        "hours": "11:00am to 11:00pm", \
+        "food type": "Italian Food", \
+        "rating": "4.5",\
+        "img": "italy.jpg"
+        },
+        {"name" : "Little Italy", "img": "italy.jpeg", \
+        "last review" : "Excellent Garlic Bread. -Tom", \
+        "location" : "1215 S Congress", \
+        "zip" : "78701", \
+        "price" : "$$", \
+        "hours": "11:00am to 11:00pm", \
+        "food type": "Italian Food", \
+        "rating": "4.5",\
+        "img": "italy.jpg"
+        }, 
             {"name" : "Little Italy", "img": "italy.jpeg", \
 	    "last review" : "Excellent Garlic Bread. -Tom", \
 	    "location" : "1215 S Congress", \
@@ -69,4 +88,4 @@ def restaurant(pk):
 	    "img": "italy.jpg"
 	    }]
 
-    return render_template("restaurant_instance.html",instance=spoof_db[1])
+    return render_template("restaurant_instance.html",instance=spoof_db[int(pk)])
