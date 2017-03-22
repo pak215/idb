@@ -33,6 +33,28 @@ spoof_db =[
     "food type": "American Food", \
     "rating": "5",\
     "id" : "3"
+    },
+    {"name" : "Biryani Pot",\
+    "img": "biryani.jpg", \
+    "last review" : "Try their Chicken Dum Biryani! It's absolutely heavenly. -Jeff", \
+    "location" : "12407 N Mopac Expy", \
+    "zip" : "78704", \
+    "price" : "$$", \
+    "hours": "11:00am to 10:00am", \
+    "food type": "Indian", \
+    "rating": "5",\
+    "id" : "7"
+    },
+    {"name" : "Ho Ho Chinese BBQ",\
+    "img": "hoho.jpg", \
+    "last review" : "I loved their bbq pork fried rice. -Nathan", \
+    "location" : "12407 N Mopac Expy", \
+    "zip" : "78705", \
+    "price" : "$$", \
+    "hours": "11:00am to 9:30am", \
+    "food type": "Chinese", \
+    "rating": "5",\
+    "id" : "8"
     }]
 
 Location_db=[
