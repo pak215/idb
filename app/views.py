@@ -101,28 +101,28 @@ food_type_db=[
      "average_rating": "4.2",
      "highest_rated_restaurant": "Gato",
      "best_location": "78702"
-     },
+    },
     {"food_type": "Italian",
      "average_price": "$$$",
      "average_rating": "4.8",
      "highest_rated_restaurant": "Little Italy",
      "best_location": "78701"
-     },
+    },
     {"food_type": "Indian",
      "average_price": "$$",
      "average_rating": "3.8",
      "highest_rated_restaurant": "Biryani",
      "best_location": "78704"
-     },
+    },
     {"food_type": "American",
      "average_price": "$",
      "average_rating": "3.1",
      "highest_rated_restaurant": "Stack Burgers",
      "best_location": "78703"
-     },]
+     }]
 
 review_db =[
-    {"review id": "1",
+    {"review_id": "1",
      "date": "1/10/2014",
      "rating": "4",
      "username": "Federico",
@@ -131,7 +131,7 @@ review_db =[
      "review": "Incredible Garlic Bread",
      "restaurant id": "1"
     },
-    {"review id": "2",
+    {"review_id": "2",
      "date": "2/11/2015",
      "rating": "3",
      "username": "Chuck",
@@ -140,7 +140,7 @@ review_db =[
      "review": "Great Hummus",
      "restaurant id": "2"
      },
-    {"review id": "3",
+    {"review_id": "3",
      "date": "1/4/2017",
      "rating": "5",
      "username": "Gabriel",
@@ -149,7 +149,7 @@ review_db =[
      "review": "Didn't like their Waffles",
      "restaurant id": "3"
      },
-    {"review id": "4",
+    {"review_id": "4",
      "date": "1/10/2017",
      "rating": "4",
      "username": "Dominique",
@@ -158,7 +158,7 @@ review_db =[
      "review": "Great Basmati rice",
      "restaurant id": "4"
      },
-    {"review id": "5",
+    {"review_id": "5",
      "date": "1/11/2004",
      "rating": "4",
      "username": "Maggie",
@@ -245,6 +245,6 @@ def restaurantLocation(pk):
 def restaurantReview(pk):
     global review_db
     for d in location_db:
-        if d["review id"] == pk:
+        if d["review_id"] == pk:
             return render_template("restaurant_instance.html",instance=d)
 
