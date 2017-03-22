@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint, render_template
-spoof_db =[
+restaurant_db =[
     {"name" : "Little Italy",\
      "img": "italy.jpeg", \
     "last_review" : "Excellent Garlic Bread. -Tom", \
@@ -177,8 +177,8 @@ def index():
 # Model Views
 @views.route('/Restaurants')
 def Restaurants():
-    global spoof_db
-    return render_template("restaurants.html", model_elements = spoof_db)
+    global restaurant_db
+    return render_template("restaurants.html", model_elements = restaurant_db)
 
 @views.route('/Locations')
 def Locations():
@@ -217,8 +217,8 @@ def About():
 
 @views.route('/Restaurants/<pk>')
 def restaurant(pk):
-    global spoof_db
-    for d in spoof_db:
+    global restaurant_db
+    for d in restaurant_db:
         if d["id"] == pk:
             return render_template("restaurant_instance.html",instance=d)
 
@@ -226,8 +226,8 @@ def restaurant(pk):
 
 @views.route('/Restaurants/Type/<pk>')
 def restaurantType(pk):
-    global spoof_db
-    return render_template("food_type_instance.html", model_elements = spoof_db)
+    global restaurant_db
+    return render_template("food_type_instance.html", model_elements = restaurant_db)
 
 # LOCATIONS
 
