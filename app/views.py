@@ -57,7 +57,7 @@ restaurant_db =[
     "id" : "5"
     }]
 
-Location_db=[
+location_db=[
     {"zip": "78701",
     "average_price": "$$",
     "popular_food_type": "Italian",
@@ -183,7 +183,7 @@ def Restaurants():
 @views.route('/Locations')
 def Locations():
     return render_template(
-        "locations.html", model_elements = Location_db)
+        "locations.html", model_elements = location_db)
 
 @views.route('/Food_Types')
 def Food_types():
