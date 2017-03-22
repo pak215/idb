@@ -91,7 +91,7 @@ def restaurant(pk):
     global spoof_db
     for d in spoof_db:
         if d["id"] == pk:
-	       return render_template("restaurant_instance.html",instance=d)
+            return render_template("restaurant_instance.html",instance=d)
 
 @views.route('/Restaurants/Type/<pk>')
 def restaurantType(pk):
