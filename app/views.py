@@ -105,35 +105,40 @@ food_type_db=[
      "average_rating": "3",
      "highest_rated_restaurant": "Ho Ho chinese BBQ",
      "highest_rated_restaurant_id": "5",
-     "best_location": "78705"
+     "best_location": "78705",
+     "img": "chinese.jpg"
     },
     {"food_type": "Mediterranean",
      "average_price": "$$$",
      "average_rating": "4.2",
      "highest_rated_restaurant": "Gato",
      "highest_rated_restaurant_id": "2",
-     "best_location": "78702"
+     "best_location": "78702",
+     "img": "mediterranean.jpg"
     },
     {"food_type": "Italian",
      "average_price": "$$$",
      "average_rating": "4.8",
      "highest_rated_restaurant": "Little Italy",
      "highest_rated_restaurant_id": "1",
-     "best_location": "78701"
+     "best_location": "78701",
+     "img": "italian.jpg"
     },
     {"food_type": "Indian",
      "average_price": "$$",
      "average_rating": "3.8",
      "highest_rated_restaurant": "Biryani",
      "highest_rated_restaurant_id": "4",
-     "best_location": "78704"
+     "best_location": "78704",
+     "img": "indian.jpg"
     },
     {"food_type": "American",
      "average_price": "$",
      "average_rating": "3.1",
      "highest_rated_restaurant": "Stack Burgers",
      "highest_rated_restaurant_id": "3",
-     "best_location": "78703"
+     "best_location": "78703",
+     "img": "american.jpg"
      }]
 
 review_db =[
