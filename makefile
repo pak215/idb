@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := test
 
-FILES :=
+FILES :=		\
     app/models.py       \
     app/tests.py        \
     IDB1.html           \
@@ -42,42 +42,42 @@ endif
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
 IDB1.html: app/models.py
-    pydoc3 -w app/models
+	pydoc3 -w app/odels
     
 IDB1.log:
-    git log > IDB1.log
+	git log > IDB1.log
 
 models.tmp: app/models.py .pylintrc
-    -$(PYLINT) app/models.py
+	-$(PYLINT) app/models.py
 
 check:
-	   @not_found=0;                                 \
-    for i in $(FILES);                            \
-    do                                            \
-        if [ -e $$i ];                            \
-        then                                      \
-            echo "$$i found";                     \
-        else                                      \
-            echo "$$i NOT FOUND";                 \
-            not_found=`expr "$$not_found" + "1"`; \
-        fi                                        \
-    done;                                         \
-    if [ $$not_found -ne 0 ];                     \
-    then                                          \
-        echo "$$not_found failures";              \
-        exit 1;                                   \
-    fi;                                           \
-    echo "success";
+	@	not_found=0;                                 \
+	for i in $(FILES);                            \
+	do                                            \
+		if [ -e $$i ];                            \
+		then                                      \
+			echo "$$i found";                     \
+		else                                      \
+			echo "$$i NOT FOUND";                 \
+			not_found=`expr "$$not_found" + "1"`; \
+		fi                                        \
+	done;                                         \
+	if [ $$not_found -ne 0 ];                     \
+	then                                          \
+		echo "$$not_found failures";              \
+		exit 1;                                   \
+	fi;                                           \
+	echo "success";
 
 clean:
 	rm -f  .coverage
 	rm -f  .pylintrc
 	rm -f  *.pyc
-    rm -f  *.tmp
+	rm -f  *.tmp
     
-test: models
-    ls -al
-    make check
+test: models.tmp
+	ls -al
+	make check
     
 versions:
 	which make
