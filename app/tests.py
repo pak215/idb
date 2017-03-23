@@ -4,25 +4,30 @@
 # pylint: disable = invalid-name
 # pylint: disable = missing-docstring
 
-# -------------------------------
-# projects/collatz/TestCollatz.py
-# Copyright (C) 2017
-# Glenn P. Downing
-# -------------------------------
-
-# https://docs.python.org/3.4/reference/simple_stmts.html#grammar-token-assert_stmt
-
 # -------
 # imports
 # -------
 from io import StringIO
 from unittest import main, TestCase
-from models.py import Restaurants, Locations, Food_types, Reviews, Base
-from insert_records.py import init_session, add_restaurant, add_location, add_food_type, add_review
+from models import Restaurants, Locations, Food_types, Reviews
+from insert_records import init_session, add_restaurant, add_location, add_food_type, add_review
+
+session_token = init_session()
 
 class test_db (TestCase):
 
+    global session_token
 
+    def test_1_restaurant_addition(self):
+        add_restaurant(session_token,
+                       name = "Little Italy",
+                       location = 78701,
+                       price = "$$",
+                       rating = "3",
+                       hours = "9 to 5",
+                       food_type = "Italian",
+                       recent_review = "1")
+        assert not (session_token.query(Restaurants), None)
 
 
 
