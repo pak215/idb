@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body>
+<div class="flex-container">
+<header>
+  <h1 class = "detailView">{{ instance["food_type"] }}</h1>
+</header>
+
+<nav class="nav">
+<ul>
+   <li><a href="#">Best Location for {{instance["food_type"] }}: {{ instance["best_location"] }}</a></li>
+
+  <li><a href="#">Highest Rated Restaurant for {{ instance["food_type"] }}: {{
+        instance["highest_rated_restaurant"] }}</a></li>
+
+</ul>
+</nav>
+
+<article class="article">
+    <!-- <p> <img src="{{ url_for('static', filename='img/' + 'temp_image.png')}}" align="right">
+    </p> -->
+
+  <h2> Average Rating </h2>
+  <p> {{ instance["average_rating"] }} </p>
+
+  <h2> Average Price </h2>
+  <p> {{ instance["average_price"] }} </p>
+
+</article>
+
+<footer>SWE Phase 1</footer>
+</div>
+
+</body>
+
+{% endblock %}
