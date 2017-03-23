@@ -7,7 +7,7 @@ restaurant_db=[
     "zip" : "78701",
     "price" : "$$",
     "hours": "11:00am to 11:00pm",
-    "food_type": "Italian Food",
+    "food_type": "Italian",
     "rating": "3.4",
     "img": "italy.jpg",
     "id" : "1"
@@ -19,7 +19,7 @@ restaurant_db=[
     "zip" : "78702",
     "price" : "$$$",
     "hours": "11:00am to 9:00pm",
-    "food_type": "Mediterranean Food",
+    "food_type": "Mediterranean",
     "rating": "4",
     "id" : "2"
     },
@@ -30,7 +30,7 @@ restaurant_db=[
     "zip" : "78703",
     "price" : "$",
     "hours": "11:00am to 11:00am",
-    "food_type": "American Food",
+    "food_type": "American",
     "rating": "5",
     "id" : "3"
     },
@@ -188,26 +188,16 @@ def Locations():
         "locations.html", model_elements = location_db)
 
 @views.route('/Food_Types')
-def Food_types():
+def Food_Types():
+    global food_type_db
     return render_template(
-        "foodtype.html",\
-        model_elements = [
-            {"type" : "Italian", "img": "temp_image.png"},
-            {"type" : "American", "img": "temp_image.png"},
-            {"type" : "Spanish", "img": "temp_image.png"},
-            {"type" : "Mexican", "img": "temp_image.png"},
-            {"type" : "Greek", "img": "temp_image.png"}
-        ])
+        "food_types.html", model_elements = food_type_db)
 
 @views.route('/Reviews')
 def Reviews():
+    global review_db
     return render_template(
-        "reviews.html",\
-        model_elements = [
-            {"name" : "Gato - John", "img": "temp_image.png"},
-            {"name" : "Stack Burgerz - Roney", "img": "temp_image.png"},
-            {"name" : "Little Italy - Tom", "img": "temp_image.png"}
-        ])
+        "reviews.html", model_elements = review_db)
 
 @views.route('/About')
 def About():
@@ -224,13 +214,6 @@ def restaurant(pk):
         if d["id"] == pk:
             return render_template("restaurant_instance.html",instance=d)
 
-# FOOD TYPES
-
-@views.route('/Restaurants/Type/<pk>')
-def restaurantType(pk):
-    global restaurant_db
-    return render_template("food_type_instance.html", model_elements = restaurant_db)
-
 # LOCATIONS
 
 @views.route('/Locations/<pk>')
@@ -240,12 +223,20 @@ def location(pk):
         if d["zip"] == pk:
             return render_template("location_instance.html",instance=d)
 
+# FOOD TYPES
+
+@views.route('/Food_Types/<pk>')
+def food_type(pk):
+    global food_type_db
+    for d in food_type_db:
+        if d["food_type"] == pk:
+            return render_template("food_type_instance.html", instance=d)
+
 # REVIEWS
 
-@views.route('/Restaurants/Review/<pk>')
-def restaurantReview(pk):
+@views.route('/Reviews/<pk>')
+def review(pk):
     global review_db
-    for d in location_db:
+    for d in review_db:
         if d["review_id"] == pk:
-            return render_template("restaurant_instance.html",instance=d)
-
+            return render_template("review_instance.html",instance=d)

@@ -92,9 +92,9 @@
 		<div class="row">
 		{% for element in model_elements %}
 
-		<a href = "/Restaurants/Review/{{ element['name'] }}">
+		<a href = "/Reviews/{{ element['review_id'] }}">
 		<div class = "col-sm-4" style = "height: 100px;">
-			<h1>{{ element["name"] }}</h1>
+         <h1>{{ element["username"] }} - {{ element["review_id"] }}</h1>
 		</div>
 		</a>
 		{% endfor %}
