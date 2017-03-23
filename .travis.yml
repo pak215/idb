@@ -7,3 +7,16 @@ python:
     
 before_install:
     - pip install --upgrade pip
+    
+install:
+    - pip install autopep8
+    - pip install coverage
+    - pip install pylint
+    
+before_script:
+    - uname -a
+    - printenv | sort
+    
+script:
+    - date
+    
