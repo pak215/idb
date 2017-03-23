@@ -63,6 +63,7 @@ location_db=[
     "average_rating": "4",
     "popular_food_type": "Italian",
     "highest_rated_restaurant": "Little Italy",
+    "highest_rated_restaurant_id": "1",
     "cheapest_restaurant": "Niki's Pizza"
     },
     {"zip": "78702", 
@@ -70,6 +71,7 @@ location_db=[
     "average_rating": "5",
     "popular_food_type": "Mediterranean",
     "highest_rated_restaurant": "Gato",
+    "highest_rated_restaurant_id": "2",
     "cheapest_restaurant": "Verts"
     },
     {"zip": "78703", 
@@ -77,6 +79,7 @@ location_db=[
     "average_rating": "3",
     "popular_food_type": "American",
     "highest_rated_restaurant": "Stack Burgers",
+    "highest_rated_restaurant_id": "3",
     "cheapest_restaurant": "McDonalds"
     },
     {"zip": "78704", 
@@ -84,6 +87,7 @@ location_db=[
     "average_rating": "2",
     "popular_food_type": "Indian",
     "highest_rated_restaurant": "Biryani",
+    "highest_rated_restaurant_id": "4",
     "cheapest_restaurant": "Tarka"
     },
     {"zip": "78705", 
@@ -91,6 +95,7 @@ location_db=[
     "average_rating": "4.5",
     "popular_food_type": "Chinese",
     "highest_rated_restaurant": "Ho ho Chinese BBQ",
+    "highest_rated_restaurant_id": "5",
     "cheapest_restaurant": "Panda Express"
     }]
 
@@ -99,30 +104,35 @@ food_type_db=[
      "average_price": "$",
      "average_rating": "3",
      "highest_rated_restaurant": "Ho Ho chinese BBQ",
+     "highest_rated_restaurant_id": "5",
      "best_location": "78705"
     },
     {"food_type": "Mediterranean",
      "average_price": "$$$",
      "average_rating": "4.2",
      "highest_rated_restaurant": "Gato",
+     "highest_rated_restaurant_id": "2",
      "best_location": "78702"
     },
     {"food_type": "Italian",
      "average_price": "$$$",
      "average_rating": "4.8",
      "highest_rated_restaurant": "Little Italy",
+     "highest_rated_restaurant_id": "1",
      "best_location": "78701"
     },
     {"food_type": "Indian",
      "average_price": "$$",
      "average_rating": "3.8",
      "highest_rated_restaurant": "Biryani",
+     "highest_rated_restaurant_id": "4",
      "best_location": "78704"
     },
     {"food_type": "American",
      "average_price": "$",
      "average_rating": "3.1",
      "highest_rated_restaurant": "Stack Burgers",
+     "highest_rated_restaurant_id": "3",
      "best_location": "78703"
      }]
 

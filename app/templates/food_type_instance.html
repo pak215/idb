@@ -9,8 +9,8 @@
 
 <nav class="nav">
 <ul>
-  <li><a href="#">Go to {{ instance["best_location"] }}</a></li>
-  <li><a href="#">Go to {{ instance["highest_rated_restaurant"] }}</a></li>
+  <li><a href="/Locations/{{ instance['best_location'] }}">Go to {{ instance["best_location"] }}</a></li>
+  <li><a href="/Restaurants/{{ instance['highest_rated_restaurant_id'] }}">Go to {{ instance["highest_rated_restaurant"] }}</a></li>
 </ul>
 </nav>
 
