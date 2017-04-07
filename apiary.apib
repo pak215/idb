@@ -1,0 +1,221 @@
+FORMAT: 1A
+HOST: foodcloseto.me/api
+
+# FoodCloseToMe
+
+FoodCloseToMe is an app that allows people to search data about restaurants and see information about their location, reviews, and food type.
+# group Restaurants
+
+## All Restaurants [/Restaurants]
+
+### List All Restaurants [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Little Italy",
+                "id": 1,
+                "yelp_id": 225,
+                "food_type": "italian",
+                "food_type2": "pizza",
+                "food_type3": "gourmet",
+                "lat": 834324,
+                "long": 324221,
+                "city": "New York City",
+                "address": "112 Apple Dr.",
+                "review": 1,
+                "review_date": "11/11/2011",
+                "review_count": 5567,
+                "url": "url/to/restaurant",
+                "img_url": "url/to/img",
+                "rating": 3.4,
+                "price": 2,
+                "location": 78701
+            },
+            {
+                ...
+            },
+            {
+                ...
+            }
+        ]
+
+## Get Single Restaurant [/restaurants/{restaurant_id}]
+
++ Parameters
+    + restaurant_id(number) ... The ID of the restaurant being retrieved
+
+### Single Restaurant [GET]
++ Response 200 (application/json)
+
+        {
+            "name": "Little Italy",
+            "id": 1,
+            "yelp_id": 225,
+            "food_type": "italian",
+            "food_type2": "pizza",
+            "food_type3": "gourmet",
+            "lat": 834324,
+            "long": 324221,
+            "city": "New York City",
+            "address": "112 Apple Dr.",
+            "review": 1,
+            "review_date": "11/11/2011",
+            "review_count": 5567,
+            "url": "url/to/restaurant",
+            "img_url": "url/to/img",
+            "rating": 3.4,
+            "price": 2,
+            "location": 78701
+        }
+
+#group Locations
+
+## All Locations [/Locations]
+
+### List All Restaurants [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "zip": 78701,
+                "average_price": 2.1,
+                "average_rating": 4.3,
+                "popular_food_type": "italian"
+                "highest_rated_restaurant": 1,
+                "most_popular_restaurant": 2,
+                "highest_price": 4,
+                "lowest_price": 1,
+                "number_restaurants": 556
+                "cheapest_restaurant": 5
+            },
+            {
+                ...
+            },
+            {
+                ...
+            }
+        ]
+        
+## Get Single Location [/Locations/{zip}]
+
++ Parameters
+    + zip(number) ... The zip code of the location
+    
+### Single Location [GET]
+
++ Response 200 (application/json)
+
+        {
+            "zip": 78701,
+            "average_price": 2.1,
+            "average_rating": 4.3,
+            "popular_food_type": "italian"
+            "highest_rated_restaurant": 1,
+            "most_popular_restaurant": 2,
+            "highest_price": 4,
+            "lowest_price": 1,
+            "number_restaurants": 556
+            "cheapest_restaurant": 5
+        }
+        
+#group Food Types
+
+## All Food Types [/Food_Types]
+
+### List All Food Types [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "food_type": "chinese",
+                "food_type_display_name": "Chinese",
+                "average_price": 1.0,
+                "average_rating": 3.0,
+                "number_restaurants": 300,
+                "image_url": "path/to/image",
+                "most_popular_restaurant": 7,
+                "best_location": 78705,
+                "highest_rated_restaurant":5
+            },
+            {
+                ...
+            },
+            {
+                ...
+            }
+        ]
+        
+## Get Single Food Type [/Food_Types/{food_type}]
+
++ Parameters
+    + food_type(string) ... The food type being searched
+    
+### Single Food Type [GET]
+
++ Response 200
+
+        {
+            "food_type": "chinese",
+            "food_type_display_name": "Chinese",
+            "average_price": 1.0,
+            "average_rating": 3.0,
+            "number_restaurants": 300,
+            "image_url": "path/to/image",
+            "most_popular_restaurant": 7,
+            "best_location": 78705,
+            "highest_rated_restaurant":5
+        }
+
+#group Reviews
+
+## All Reviews [/Reviews]
+
+### List All Reviews [GET]
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "restaurant_id": 10,
+                "yelp_restaurant_id": 556,
+                "username": "Federico",
+                "restaurant": 1,
+                "zipcode": 78702,
+                "rating": 3,
+                "review": "Great Hummus",
+                "date": "10/10/2010",
+                "profile_picture_url": "path/to/picture",
+                "review_url": "path_to_review"
+            },
+            {
+                ...
+            }
+        ]
+        
+## Get Single Review [/Reviews/{review_id}]
+
++ Parameters
+    + review_id(number) ... The id of the review to be retrieved
+
+### Single Review [GET]    
+
++ Response 200
+
+        {
+            "id": 1,
+            "restaurant_id": 10,
+            "yelp_restaurant_id": 556,
+            "username": "Federico",
+            "restaurant": 1,
+            "zipcode": 78702,
+            "rating": 3,
+            "review": "Great Hummus",
+            "date": "10/10/2010",
+            "profile_picture_url": "path/to/picture",
+            "review_url": "path_to_review"
+        }
