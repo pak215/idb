@@ -1,95 +1,40 @@
 FORMAT: 1A
-HOST: foodcloseto.me/api
+HOST: foodcloseto.me/
 
-# FoodCloseToMe
+# foodcloseto.me
 
-FoodCloseToMe is an app that allows people to search data about restaurants and see information about their location, reviews, and food type.
-# group Restaurants
+foodcloseto.me is an app that allows people to search data about restaurants and see information about their location, reviews, and food type.
 
-## All Restaurants [/Restaurants]
-
-### List All Restaurants [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "name": "Little Italy",
-                "id": 1,
-                "yelp_id": 225,
-                "food_type": "italian",
-                "food_type2": "pizza",
-                "food_type3": "gourmet",
-                "lat": 834324,
-                "long": 324221,
-                "city": "New York City",
-                "address": "112 Apple Dr.",
-                "review": 1,
-                "review_date": "11/11/2011",
-                "review_count": 5567,
-                "url": "url/to/restaurant",
-                "img_url": "url/to/img",
-                "rating": 3.4,
-                "price": 2,
-                "location": 78701
-            },
-            {
-                ...
-            },
-            {
-                ...
-            }
-        ]
-
-## Get Single Restaurant [/restaurants/{restaurant_id}]
-
-+ Parameters
-    + restaurant_id(number) ... The ID of the restaurant being retrieved
-
-### Single Restaurant [GET]
-+ Response 200 (application/json)
-
-        {
-            "name": "Little Italy",
-            "id": 1,
-            "yelp_id": 225,
-            "food_type": "italian",
-            "food_type2": "pizza",
-            "food_type3": "gourmet",
-            "lat": 834324,
-            "long": 324221,
-            "city": "New York City",
-            "address": "112 Apple Dr.",
-            "review": 1,
-            "review_date": "11/11/2011",
-            "review_count": 5567,
-            "url": "url/to/restaurant",
-            "img_url": "url/to/img",
-            "rating": 3.4,
-            "price": 2,
-            "location": 78701
-        }
-
-#group Locations
-
-## All Locations [/Locations]
+## Restaurants Collection [/API/Restaurants]
 
 ### List All Restaurants [GET]
 
-+ Response 200 (application/json)
++ Response 200 (API/Restaurants)
 
         [
             {
-                "zip": 78701,
-                "average_price": 2.1,
-                "average_rating": 4.3,
-                "popular_food_type": "italian"
-                "highest_rated_restaurant": 1,
-                "most_popular_restaurant": 2,
-                "highest_price": 4,
-                "lowest_price": 1,
-                "number_restaurants": 556
-                "cheapest_restaurant": 5
+                "id": "2152",
+                "name": "1431 Cafe",
+                "yelp_id": "1431-cafe-cedar-park",
+                "location": 78613,
+                "lat": 30.5235192410157,
+                "long": -97.8236986312133,
+                "city": "Cedar Park",
+                "address": "601 E Whitestone Blvd",
+                "phone": "(512) 528-0018",
+                "price": "$$",
+                "rating": 3.0,
+                "review": "This is a great place for breakfast. We haven't made it over here for the afternoon yet but this place is friendly and has some good home style cooking. The...",
+                "review_date": "2016-12-26 20:32:23",
+                "review_count": 187,
+                "url": "https://www.yelp.com/biz/1431-cafe-cedar-park?adjust_creative=oQeTOrWw-rVtEKjG6sA2ew&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oQeTOrWw-rVtEKjG6sA2ew",
+                "img_url": "https://s3-media2.fl.yelpcdn.com/bphoto/0gsIQQCTGZgmthtOgknrAQ/o.jpg",
+                "food_type": "tradamerican",
+                "food_type2": "breakfast_brunch",
+                "food_type3": null,
+                "food_type_disp": "American (Traditional)",
+                "food_type_disp2": "Breakfast & Brunch",
+                "food_type_disp3": null
             },
             {
                 ...
@@ -98,124 +43,152 @@ FoodCloseToMe is an app that allows people to search data about restaurants and 
                 ...
             }
         ]
-        
-## Get Single Location [/Locations/{zip}]
+
+## Restaurants filtering and sorting [/API/Restaurants{?sortby,rating,price,food_type,name}]
 
 + Parameters
-    + zip(number) ... The zip code of the location
-    
-### Single Location [GET]
+    + sortby (optional) - A variable that specifies whether you want to sort by rating, price or name
+    + rating (optional) - A variable that specifies whether you want to filter by rating: 1,2,3,4,5 (yelp stars dawg)
+    + price (optional) - A variable that specifies whether you want to filter by price: "$", "$$"... "$$$$"
+    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + name (optional) - A variable that specifies whether you want to filter by name: "Los toros hermanos"
+    <! example: http://foodcloseto.me/API/Restaurants?sortby=price&rating=2,3>
+### filter and sort Restaurants [GET]
 
-+ Response 200 (application/json)
-
-        {
-            "zip": 78701,
-            "average_price": 2.1,
-            "average_rating": 4.3,
-            "popular_food_type": "italian"
-            "highest_rated_restaurant": 1,
-            "most_popular_restaurant": 2,
-            "highest_price": 4,
-            "lowest_price": 1,
-            "number_restaurants": 556
-            "cheapest_restaurant": 5
-        }
-        
-#group Food Types
-
-## All Food Types [/Food_Types]
-
-### List All Food Types [GET]
-
-+ Response 200 (application/json)
++ Response 200 (API/Restaurants)
 
         [
             {
-                "food_type": "chinese",
-                "food_type_display_name": "Chinese",
-                "average_price": 1.0,
-                "average_rating": 3.0,
-                "number_restaurants": 300,
-                "image_url": "path/to/image",
-                "most_popular_restaurant": 7,
-                "best_location": 78705,
-                "highest_rated_restaurant":5
+                "id": "2152",
+                "name": "1431 Cafe",
+                "yelp_id": "1431-cafe-cedar-park",
+                "location": 78613,
+                "lat": 30.5235192410157,
+                "long": -97.8236986312133,
+                "city": "Cedar Park",
+                "address": "601 E Whitestone Blvd",
+                "phone": "(512) 528-0018",
+                "price": "$$",
+                "rating": 3.0,
+                "review": "This is a great place for breakfast. We haven't made it over here for the afternoon yet but this place is friendly and has some good home style cooking. The...",
+                "review_date": "2016-12-26 20:32:23",
+                "review_count": 187,
+                "url": "https://www.yelp.com/biz/1431-cafe-cedar-park?adjust_creative=oQeTOrWw-rVtEKjG6sA2ew&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oQeTOrWw-rVtEKjG6sA2ew",
+                "img_url": "https://s3-media2.fl.yelpcdn.com/bphoto/0gsIQQCTGZgmthtOgknrAQ/o.jpg",
+                "food_type": "tradamerican",
+                "food_type2": "breakfast_brunch",
+                "food_type3": null,
+                "food_type_disp": "American (Traditional)",
+                "food_type_disp2": "Breakfast & Brunch",
+                "food_type_disp3": null
             },
             {
-                ...
-            },
+                "address": "4221 South 1st", 
+                "city": "Austin", 
+                "food_type": "streetvendors", 
+                "food_type2": null, 
+                "food_type3": null, 
+                "food_type_disp": "Street Vendors", 
+                "food_type_disp2": null, 
+                "food_type_disp3": null, 
+                "id": "152", 
+                "img_url": "/static/img/default.jpg", 
+                "lat": 30.2234380346903, 
+                "location": 78745, 
+                "long": -97.771303653717, 
+                "name": "Antojitos Mexicanos Truck", 
+                "phone": "(512) 803-5099", 
+                "price": "$$", 
+                "rating": 2.0, 
+                "review": "I recently read a list of the top 10 taco trucks in Austin.  As my gringo husband is obsessed with tacos, I shot him the list while he was at work. He...", 
+                "review_count": 1, 
+                "review_date": "2013-09-12 10:52:16", 
+                "url": "https://www.yelp.com/biz/antojitos-mexicanos-truck-austin?adjust_creative=oQeTOrWw-rVtEKjG6sA2ew&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oQeTOrWw-rVtEKjG6sA2ew", 
+                "yelp_id": "antojitos-mexicanos-truck-austin"
+              }, 
             {
                 ...
             }
         ]
-        
-## Get Single Food Type [/Food_Types/{food_type}]
 
-+ Parameters
-    + food_type(string) ... The food type being searched
-    
-### Single Food Type [GET]
-
-+ Response 200
-
-        {
-            "food_type": "chinese",
-            "food_type_display_name": "Chinese",
-            "average_price": 1.0,
-            "average_rating": 3.0,
-            "number_restaurants": 300,
-            "image_url": "path/to/image",
-            "most_popular_restaurant": 7,
-            "best_location": 78705,
-            "highest_rated_restaurant":5
-        }
-
-#group Reviews
-
-## All Reviews [/Reviews]
+## Reviews Collection [/API/Reviews]
 
 ### List All Reviews [GET]
 
-+ Response 200
++ Response 200 (API/Reviews)
 
         [
             {
-                "id": 1,
-                "restaurant_id": 10,
-                "yelp_restaurant_id": 556,
-                "username": "Federico",
-                "restaurant": 1,
-                "zipcode": 78702,
-                "rating": 3,
-                "review": "Great Hummus",
-                "date": "10/10/2010",
-                "profile_picture_url": "path/to/picture",
-                "review_url": "path_to_review"
+               "id": 3235,
+                "restaurant_id": "2220",
+                "restaurant_name": "Jack in the Box",
+                "yelp_restaurant_id": "jack-in-the-box-round-rock-4",
+                "food_type": "hotdogs",
+                "food_type_disp": "Fast Food",
+                "date": "2016-12-30 00:12:14",
+                "rating": 1,
+                "username": "'Karina G.",
+                "review": "The worst customer service ever! Crystal took my order and forgot to give me half my order. I waited 15 minutes only at the window and 5 minutes at the...",
+                "profile_picture_url": "https://s3-media4.fl.yelpcdn.com/photo/AQmT5rsbsZHaqUSe4ho0Gw/o.jpg",
+                "review_url": "https://www.yelp.com/biz/jack-in-the-box-round-rock-4?hrid=dIaRjMnLAHeFv1DTBB1UVw&adjust_creative=oQeTOrWw-rVtEKjG6sA2ew&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=oQeTOrWw-rVtEKjG6sA2ew",
+                "zipcode": 78681
+            },
+            {
+            ...
+            },
+            {
+            ...
+            }
+        ]
+
+## Locations Collection [/API/Locations]
+
+### List All Locations [GET]
+
++ Response 200 (API/Locations)
+
+        [
+            {
+                "zipcode": 73301,
+                "average_rating": 4.83,
+                "average_price": 1.0,
+                "highest_price": "$",
+                "lowest_price": "$",
+                "popular_food_type": "restaurants",
+                "highest_rated_restaurant": 46,
+                "most_popular_restaurant": "1689",
+                "number_restaurants": 3
+            },
+            {
+                ...
             },
             {
                 ...
             }
         ]
         
-## Get Single Review [/Reviews/{review_id}]
+## Food Types Collection [/Food_Types]
 
-+ Parameters
-    + review_id(number) ... The id of the review to be retrieved
+### List All Food Types [GET]
 
-### Single Review [GET]    
++ Response 200 (API/Food_Types)
 
-+ Response 200
-
-        {
-            "id": 1,
-            "restaurant_id": 10,
-            "yelp_restaurant_id": 556,
-            "username": "Federico",
-            "restaurant": 1,
-            "zipcode": 78702,
-            "rating": 3,
-            "review": "Great Hummus",
-            "date": "10/10/2010",
-            "profile_picture_url": "path/to/picture",
-            "review_url": "path_to_review"
-        }
+        [
+            {
+                "food_type": "acaibowls",
+                "food_type_display_name": "Acai Bowls",
+                "average_price": 2.0,
+                "average_rating": 4.5,
+                "image_url": "/static/img/acaibowls.jpg",
+                "number_restaurants": 1,
+                "most_popular_restaurant": "1035",
+                "highest_rated_restaurant": "1035",
+                "best_location": "78746"
+            },
+            {
+                ...
+            },
+            {
+                ...
+            }
+        ]
