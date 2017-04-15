@@ -46,14 +46,15 @@ foodcloseto.me is an app that allows people to search data about restaurants and
 
 ## Restaurants filtering and sorting [/API/Restaurants{?sortby,rating,price,food_type,name}]
 
+### filter and sort Restaurants [GET]
+
 + Parameters
-    + sortby (optional) - A variable that specifies whether you want to sort by rating, price or name
-    + rating (optional) - A variable that specifies whether you want to filter by rating: 1,2,3,4,5 (yelp stars dawg)
+    + sortby (optional) - A variable that specifies whether you want to sort by rating, price, food_type or name
+    + rating (optional) - A variable that specifies whether you want to filter by rating: 1,2,3,4,5 
     + price (optional) - A variable that specifies whether you want to filter by price: "$", "$$"... "$$$$"
     + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
     + name (optional) - A variable that specifies whether you want to filter by name: "Los toros hermanos"
     <! example: http://foodcloseto.me/API/Restaurants?sortby=price&rating=2,3>
-### filter and sort Restaurants [GET]
 
 + Response 200 (API/Restaurants)
 
@@ -141,6 +142,44 @@ foodcloseto.me is an app that allows people to search data about restaurants and
             }
         ]
 
+## Reviews filtering and sorting  [/API/Reviews{?sortby,rating,food_type,hasimg,id}]
+
+### filter and sort Reviews [GET]
+
++ Parameters
+    + sortby (optional) - A variable that specifies whether you want to sort by rating, foodtype, hasimg or id.
+    + rating (optional) - A variable that specifies whether you want to filter by rating: 1,2,3,4,5
+    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + hasimg (optional) - A variable that specifies whether you want to filter reviewers with or without profile image. 
+    + id (optional) - A variable that specifies whether you want to filter by review id: 1,2,3..n
+    <! example: http://foodcloseto.me/API/Reviews?sortby=id&price=3>
+
++ Response 200 (API/Reviews)
+
+        [
+            {
+               "id": 3235,
+                "restaurant_id": "2220",
+                "restaurant_name": "Jack in the Box",
+                "yelp_restaurant_id": "jack-in-the-box-round-rock-4",
+                "food_type": "hotdogs",
+                "food_type_disp": "Fast Food",
+                "date": "2016-12-30 00:12:14",
+                "rating": 1,
+                "username": "'Karina G.",
+                "review": "The worst customer service ever! Crystal took my order and forgot to give me half my order. I waited 15 minutes only at the window and 5 minutes at the...",
+                "profile_picture_url": "https://s3-media4.fl.yelpcdn.com/photo/AQmT5rsbsZHaqUSe4ho0Gw/o.jpg",
+                "review_url": "https://www.yelp.com/biz/jack-in-the-box-round-rock-4?hrid=dIaRjMnLAHeFv1DTBB1UVw&adjust_creative=oQeTOrWw-rVtEKjG6sA2ew&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=oQeTOrWw-rVtEKjG6sA2ew",
+                "zipcode": 78681
+            },
+            {
+            ...
+            },
+            {
+            ...
+            }
+        ]
+
 ## Locations Collection [/API/Locations]
 
 ### List All Locations [GET]
@@ -166,11 +205,80 @@ foodcloseto.me is an app that allows people to search data about restaurants and
                 ...
             }
         ]
-        
+
+## Locations filerting and sorting [/API/Locations{?sortby,average_rating,average_price,food_type}]
+
+### filter and sort Locations [GET]
+
++ Parameters
+    + sortby (optional) - A variable that specifies whether you want to sort by: avgrating, foodtype or avgprice
+    + average_rating (optional) - A variable that specifies whether you want to filter by average rating of an area: 1.5,1.8,5...
+    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + average_price (optional) - A variable that specifies whether you want to filter by avgprice: 1.5,1.8,5...
+    <! example: http://foodcloseto.me/API/Locations?sortby=avgprice&avg=3>
+    
+
++ Response 200 (API/Locations)
+
+        [
+            {
+                "zipcode": 73301,
+                "average_rating": 4.83,
+                "average_price": 1.0,
+                "highest_price": "$",
+                "lowest_price": "$",
+                "popular_food_type": "restaurants",
+                "highest_rated_restaurant": 46,
+                "most_popular_restaurant": "1689",
+                "number_restaurants": 3
+            },
+            {
+                ...
+            },
+            {
+                ...
+            }
+        ]
+
+
 ## Food Types Collection [/Food_Types]
 
 ### List All Food Types [GET]
 
++ Response 200 (API/Food_Types)
+
+        [
+            {
+                "food_type": "acaibowls",
+                "food_type_display_name": "Acai Bowls",
+                "average_price": 2.0,
+                "average_rating": 4.5,
+                "image_url": "/static/img/acaibowls.jpg",
+                "number_restaurants": 1,
+                "most_popular_restaurant": "1035",
+                "highest_rated_restaurant": "1035",
+                "best_location": "78746"
+            },
+            {
+                ...
+            },
+            {
+                ...
+            }
+        ]
+        
+## Food Types sorting and filtering [/API/Food_Types{?sortby,average_price,average_rating,food_type}]
+
+### filter and sort food types [GET]
+
++ Parameters
+    + sortby (optional) - A variable that specifies whether you want to sort by avgrating, foodtype or avgprice
+    + average_rating (optional) - A variable that specifies whether you want to filter by average rating of a food type: 1.5,1.8,5...
+    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + average_price (optional) - A variable that specifies whether you want to filter by avgprice: 1.5,1.8,5...
+    <! example: http://foodcloseto.me/API/Locations?sortby=avgprice&avg=3>
+    
+    
 + Response 200 (API/Food_Types)
 
         [
