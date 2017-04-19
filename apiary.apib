@@ -44,7 +44,7 @@ foodcloseto.me is an app that allows people to search data about restaurants and
             }
         ]
 
-## Restaurants filtering and sorting [/API/Restaurants{?sortby,rating,price,food_type,name}]
+## Restaurants filtering and sorting [/API/Restaurants{?sortby,rating,price,foodtype,name,id}]
 
 ### filter and sort Restaurants [GET]
 
@@ -52,8 +52,9 @@ foodcloseto.me is an app that allows people to search data about restaurants and
     + sortby (optional) - A variable that specifies whether you want to sort by rating, price, food_type or name
     + rating (optional) - A variable that specifies whether you want to filter by rating: 1,2,3,4,5 
     + price (optional) - A variable that specifies whether you want to filter by price: "$", "$$"... "$$$$"
-    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + foodtype (optional) - A variable that specifies whether you want to filter by food type: "American"
     + name (optional) - A variable that specifies whether you want to filter by name: "Los toros hermanos"
+    + id (optional) - A variable that specifies a single restaurant
     <! example: http://foodcloseto.me/API/Restaurants?sortby=price&rating=2,3>
 
 + Response 200 (API/Restaurants)
@@ -142,14 +143,14 @@ foodcloseto.me is an app that allows people to search data about restaurants and
             }
         ]
 
-## Reviews filtering and sorting  [/API/Reviews{?sortby,rating,food_type,hasimg,id}]
+## Reviews filtering and sorting  [/API/Reviews{?sortby,rating,foodtype,hasimg,id}]
 
 ### filter and sort Reviews [GET]
 
 + Parameters
     + sortby (optional) - A variable that specifies whether you want to sort by rating, foodtype, hasimg or id.
     + rating (optional) - A variable that specifies whether you want to filter by rating: 1,2,3,4,5
-    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + foodtype (optional) - A variable that specifies whether you want to filter by food type: "American"
     + hasimg (optional) - A variable that specifies whether you want to filter reviewers with or without profile image. 
     + id (optional) - A variable that specifies whether you want to filter by review id: 1,2,3..n
     <! example: http://foodcloseto.me/API/Reviews?sortby=id&price=3>
@@ -206,14 +207,14 @@ foodcloseto.me is an app that allows people to search data about restaurants and
             }
         ]
 
-## Locations filerting and sorting [/API/Locations{?sortby,average_rating,average_price,food_type}]
+## Locations filerting and sorting [/API/Locations{?sortby,average_rating,average_price,foodtype}]
 
 ### filter and sort Locations [GET]
 
 + Parameters
     + sortby (optional) - A variable that specifies whether you want to sort by: avgrating, foodtype or avgprice
     + average_rating (optional) - A variable that specifies whether you want to filter by average rating of an area: 1.5,1.8,5...
-    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + foodtype (optional) - A variable that specifies whether you want to filter by food type: "American"
     + average_price (optional) - A variable that specifies whether you want to filter by avgprice: 1.5,1.8,5...
     <! example: http://foodcloseto.me/API/Locations?sortby=avgprice&avg=3>
     
@@ -267,14 +268,14 @@ foodcloseto.me is an app that allows people to search data about restaurants and
             }
         ]
         
-## Food Types sorting and filtering [/API/Food_Types{?sortby,average_price,average_rating,food_type}]
+## Food Types sorting and filtering [/API/Food_Types{?sortby,average_price,average_rating,foodtype}]
 
 ### filter and sort food types [GET]
 
 + Parameters
     + sortby (optional) - A variable that specifies whether you want to sort by avgrating, foodtype or avgprice
     + average_rating (optional) - A variable that specifies whether you want to filter by average rating of a food type: 1.5,1.8,5...
-    + food_type (optional) - A variable that specifies whether you want to filter by food type: "American"
+    + foodtype (optional) - A variable that specifies whether you want to filter by food type: "American"
     + average_price (optional) - A variable that specifies whether you want to filter by avgprice: 1.5,1.8,5...
     <! example: http://foodcloseto.me/API/Locations?sortby=avgprice&avg=3>
     
